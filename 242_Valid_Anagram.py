@@ -4,6 +4,8 @@ Given two strings s and t, return true if t is an anagram of s, and false otherw
 An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 """
 
+# SOLUTION 1
+
 class Solution(object):
     def isAnagram(self, s, t):
         if len(s) != len(t):
@@ -19,3 +21,15 @@ class Solution(object):
                 return False
 
         return True 
+    
+# SOLUTION 2
+
+class Solution(object):
+    def isAnagram(self, s, t):
+        return Counter(s) == Counter(t) # Counter is a function that stores hashable values 
+    
+# SOLUTION 3
+
+class Solution(object):
+    def isAnagram(self, s, t):
+        return sorted(s) == sorted(t)
